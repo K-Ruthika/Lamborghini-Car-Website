@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black; }
+        .signup-form { width: 400px; height: 500px; padding: 20px; background-color:rgb(161, 159, 159); border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        .signup-form h2 { text-align: center; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; }
+        .form-group input { width: 100%; padding: 8px; box-sizing: border-box; }
+        .form-group .error { color: rgb(223, 17, 17); font-size: 15px; display: none; }
+        .btn { width: 100%; padding: 10px; background-color: black; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="signup-form">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <span class="error" id="nameError">Please enter your name</span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="emailError">Please enter a valid email</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <span class="error" id="passwordError">Please enter a password</span>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+            <span class="error" id="confirmPasswordError">Passwords do not match</span>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+</div>
+
+<script>
+$(document).ready(function() {
+    // Hide error messages initially
+    $(".error").hide();
+
+    // Handle form submission
+    $("#signupForm").on("submit", function(event) {
+        event.preventDefault();
+
+        // Hide all error messages
+        $(".error").hide();
+
+        // Get values from input fields
+        var name = $("#name").val().trim();
+        var email = $("#email").val().trim();
+        var password = $("#password").val().trim();
+        var confirmPassword = $("#confirmPassword").val().trim();
+
+        // Validation flags
+        var isValid = true;
+
+        // Check if name is empty
+        if (name === "") {
+            $("#nameError").show();
+            isValid = false;
+        }
+
+        // Check if email is valid
+        if (!validateEmail(email)) {
+            $("#emailError").show();
+            isValid = false;
+        }
+
+        // Check if password is provided
+        if (password === "") {
+            $("#passwordError").show();
+            isValid = false;
+        }
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            $("#confirmPasswordError").show();
+            isValid = false;
+        }
+
+        // If all fields are valid, show success message
+        if (isValid) {
+            alert("Form submitted successfully!");
+        }
+    });
+
+    // Email validation function (using only jQuery methods)
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+});
+</script>
+
+</body>
+</html>

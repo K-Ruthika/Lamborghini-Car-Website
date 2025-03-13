@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <header>
+        <div class="logo">
+            <h1 style="font-size: x-large;">
+                <img src="https://w0.peakpx.com/wallpaper/173/86/HD-wallpaper-lamborghini-logo-lamborghini-logo-brand-logo-car-sports-car.jpg">
+            LAMBORGHINI WORLD
+            </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#cart">CART</a></li>
+                <li><a href="#testimonial">TESTIMONIAL</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="banner">
+    </section>
+    <br>
+    <section id="about" class="section">
+    <h2 style="font-size: xx-large; color:rgb(161, 159, 159);">ABOUT</h2>
+        <p style="font-size: larger; color: white;text-align: center;">
+            The company was headquartered in a purpose-built facility in Sant ' Agata Bolognese and
+            He was<br>surrounded himself's with highly capable engineers and technicians: Giotto Bizzarrini designed a<br>engine,
+            Gians Paolo Dallara and Paolo Stanzani developed is the chassis , and Franco designed <br>bodywork.
+            The first model was the 350 GTV, was not a success due to its futuristic style and was <br>a remained  prototype. 
+            The project then handed over to the Milanese coachbuilder Touring, which <br>created a more classic and sober designing.
+            The new car, is named by 350 GT , was a fasts and <br> it is  elegant two-seaters grand tourer and was it is the first series - produced car by Lamborghini.<br>
+        </p>
+    </section>
+    <br>
+
+    <div id="testimonial">
+    <h1 style="font-size: xx-large; color: rgb(161, 159, 159); text-align: center;">TESTIMONIAL</h1>
+    <!-- Custom styles -->
+     <br>
+    <style>
+        .testimonial {
+            padding: 0px;
+            margin-bottom: 10px;
+            background-color:black;
+            border: 1px solid black;
+            border-radius: 7px;
+            text-align: center;
+        }
+
+        .testimonial .testimonial-text {
+            font-style: inherit;
+            font-size: larger;
+            color: white;
+        }
+        .testimonial .testimonial-author {
+            border-radius: 50%;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+    </style>
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div id="testimonialCarousel" class="carousel slide" data-ride="carousel" >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial">
+                                <p class="testimonial-text">" Nice car Good mileage, nice speed ,good for crusing in college and other days , <br>In good condition, low maintenance, good fuel efficiency I will buy again this soon. "<br></p>
+                                <h6 style="color: rgb(172, 130, 25);" class="testimonial-author">- Noone</h6>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <p class="testimonial-text">" World's best car in this universe so buy this without any hesitation . So you can buy<br> and make your comfortable without any quarry and this is value of your money. "</p>
+                                <h6 style="color: rgb(172, 130, 25);" class="testimonial-author">- Amit chaurasiya</h6>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <p class="testimonial-text">"Very fast car end nice looking super speed very fast amezing future .There is a <br>good arrangement for safety in the car and the power of the engine is amazing."</p>
+                                <h6 style="color: rgb(172, 130, 25);" class="testimonial-author">- Abhi prajapati</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Bootstrap JS and dependencies (jQuery is required) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <br><br>
+    <section id="shopping cart" class="section">
+        <h2 style="color:  rgb(161, 159, 159);font-size: xx-large;">SHOPPING CART</h2>
+        <div id="cart"></div>
+        <button onclick="loadCart()" id="button">Get Cart Details</button>
+        
+        <script>
+            function loadCart() {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "cart.xml", true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        displayCart(xhr);
+                    }
+                };
+                xhr.send();
+            }
+    
+            function displayCart(xml) {
+                const cartDiv = document.getElementById("cart");
+                cartDiv.innerHTML = "";  // Clear previous content if any
+                const items = xml.responseXML.getElementsByTagName("item");
+    
+                for (let i = 0; i < items.length; i++) {
+                    const name = items[i].getElementsByTagName("name")[0].textContent;
+                    const price = items[i].getElementsByTagName("price")[0].textContent;
+                    const quantity = items[i].getElementsByTagName("quantity")[0].textContent;
+                    const image = items[i].getElementsByTagName("image")[0].textContent;
+    
+                    const itemDiv = document.createElement("div");
+                    itemDiv.classList.add("cart-item");
+    
+                    itemDiv.innerHTML = `
+                        <img src="${image}" alt="${name}">
+                        <div>
+                            <h2>${name}</h2>
+                            <p>Price: $${price}</p>
+                            <p>Quantity: ${quantity}</p>
+                        </div>
+                    `;
+    
+                    cartDiv.appendChild(itemDiv);
+                }
+            }
+        </script>
+        </section>
+        <br>
+    <section id="contact" class="section contact">
+        <div class="contact-container">
+         <div class="map">
+             <h2 style="font-size: xx-large;color:rgb(161, 159, 159)">LOCATION</h2>
+             <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1990235.4278662906!2d77.61370614583424!3d13.02429786603084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sLamborghini%20in%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1729836926628!5m2!1sen!2sin"width="400" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="form">
+                <h2 style="font-size: xx-large;color:rgb(161, 159, 159);"> CONTACT DETAILS</h2>
+                </h1>
+                <form id="contact-form">
+                   <label style="color: rgb(161, 159, 159);" for="name">Name:</label>
+                   <input type="text" id="name" name="user_name" required><br>
+            
+                   <label style="color: rgb(161, 159, 159);" for="email">Email:</label>
+                   <input type="email" id="email" name="user_email" required><br>
+            
+                   <label style="color: rgb(161, 159, 159);" for="mobile no">Mobile no:</label>
+                   <input type="mobile no" id="mobile no" name="mobile_no" required><br>
+            
+                   <label style="color: rgb(161, 159, 159);" for="message">feedback:</label>
+                   <textarea id="message" name="message" rows="4" required></textarea><br>
+            
+                   <button type="submit">Submit</button>
+               </form>
+            <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+                           <script>
+                               (function () {
+                                   emailjs.init('BG3boyfq45mCSFw_t'); // Replace with your EmailJS User ID
+                               })();
+            
+                                document.getElementById('contact-form').addEventListener('submit', function (event) {
+                                   event.preventDefault();
+            
+                                   emailjs.sendForm('service_tegbtzn','template_otctjkn', this)
+                                       .then(function (response) {
+                                           alert('Email sent successfully!');
+                                           document.getElementById('contact-form').reset(); // Optional: reset form fields
+                                       }, function (error) {
+                                           alert('Failed to send email. Error: ' + JSON.stringify(error));
+                                       });
+                               });
+                           </script>
+            
+                </div>
+            </div>
+        </div>
+</section>
+    <br>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section useful-links">
+                <h2 style="color:black">Useful Links</h2>
+                <ul style="font-size: large;">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section address">
+                <h2 style="color:black;">Contact Details</h2>
+                <p style="font-size: larger;"> 
+                    UMIYA Landmark,<br>
+                     Shanthala Nagar, <br>
+                     Bengaluru,<br> 
+                     Karnataka-560001<br>
+                 <p style="font-size: larger;">lamborghini@gmail.com<br>
+                     Phone: 6375879918</p>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <footer>
+        <div class="footer-bottom">
+            <p style="text-align: center;">&copy; 2024  Lamborghini World. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

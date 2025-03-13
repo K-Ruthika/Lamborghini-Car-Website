@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black; }
+        .signup-form { width: 400px; height: 500px; padding: 20px; background-color:rgb(161, 159, 159) ; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        .signup-form h2 { text-align: center; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; }
+        .form-group input { width: 100%; padding: 8px; box-sizing: border-box; }
+        .form-group .error { color:rgb(223, 17, 17); font-size: 15px; display: none; }
+        .btn { width: 100%; padding: 10px; background-color: black; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    
+    </style>
+</head>
+<body>
+
+<!-- Container for the form, which will be added with jQuery -->
+<div id="formContainer"></div>
+
+<script>
+$(document).ready(function() {
+    // Create and append the form structure using jQuery
+    var $form = $("<form>", { id: "signupForm" });
+    var $signupFormDiv = $("<div>", { class: "signup-form" }).append(
+        $("<h2>").text("Sign Up")
+    );
+
+    // Array of input fields and their labels
+    var fields = [
+        { id: "name", label: "Name", type: "text", errorMsg: "Please enter your name" },
+        { id: "email", label: "Email", type: "email", errorMsg: "Please enter a valid email" },
+        { id: "password", label: "Password", type: "password", errorMsg: "Please enter a password" },
+        { id: "confirmPassword", label: "Confirm Password", type: "password", errorMsg: "Passwords do not match" }
+    ];
+
+    // Loop through each field and build form structure
+    $.each(fields, function(_, field) {
+        var $formGroup = $("<div>", { class: "form-group" }).append(
+            $("<label>", { for: field.id }).text(field.label),
+            $("<input>", { type: field.type, id: field.id, name: field.id }),
+            $("<span>", { class: "error", id: field.id + "Error", text: field.errorMsg })
+        );
+        $form.append($formGroup);
+    });
+
+    // Submit button
+    var $submitButton = $("<button>", { type: "submit", class: "btn", text: "Sign Up" });
+    $form.append($submitButton);
+
+    // Append the form to the signup form div and then to the container
+    $signupFormDiv.append($form);
+    $("#formContainer").append($signupFormDiv);
+
+    // Form validation and submission handler
+    $form.on("submit", function(event) {
+        event.preventDefault();
+
+        // Hide previous error messages
+        $(".error").hide();
+
+        // Get input values
+        var name = $("#name").val().trim();
+        var email = $("#email").val().trim();
+        var password = $("#password").val().trim();
+        var confirmPassword = $("#confirmPassword").val().trim();
+
+        // Validation flags
+        var isValid = true;
+
+        // Check each field and show errors if necessary
+        if (name === "") {
+            $("#nameError").show();
+            isValid = false;
+        }
+        if (!validateEmail(email)) {
+            $("#emailError").show();
+            isValid = false;
+        }
+        if (password === "") {
+            $("#passwordError").show();
+            isValid = false;
+        }
+        if (password !== confirmPassword) {
+            $("#confirmPasswordError").show();
+            isValid = false;
+        }
+
+        // If valid, show success alert
+        if (isValid) {
+            alert("Form submitted successfully!");
+        }
+    });
+
+    // Email validation function
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+});
+</script>
+
+</body>
+</html>

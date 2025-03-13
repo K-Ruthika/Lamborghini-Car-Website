@@ -1,0 +1,151 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color:  #ebcfd3;
+    color: #9b1e63bd;
+}
+
+/* Navigation */
+header {
+    background-color:  #9b1e63bd;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #330d22bd;
+}
+
+/* Banner */
+#home {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner {
+    background-image: url('https://content.jdmagicbox.com/comp/kolkata/u4/033pxx33.xx33.190826160453.b2u4/catalogue/the-great-homes-best-low-budget-interior-newtown-rajarhat-new-town-kolkata-commercial-interior-designers-oy0lgin0n9.jpg'); /* Replace with your banner image URL */
+    background-size: cover;
+    background-position: center;
+    padding: 200px 10px;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 5px #ebcfd3;
+}
+
+.banner p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px #ebcfd3;
+}
+
+/* Section Styles */
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+#about, #testimonials, #contact {
+    background-color:#ebcfd3;
+    margin: 2rem 0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px #ebcfd3;
+}
+
+/* Testimonials */
+.testimonial {
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.testimonial span {
+    display: block;
+    font-weight: bold;
+    color: #9b1e63bd;
+    margin-top: 0.5rem;
+}
+
+/* Contact Form */
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #9b1e63bd;
+}
+
+form input, form textarea {
+    width: 100;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color:#9b1e63bd;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #9b1e63bd;
+}
+footer {
+    background-color: #9b1e63bd;
+    color:white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+.social-icons a {
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}

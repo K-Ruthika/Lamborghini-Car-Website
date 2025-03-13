@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Als Beauty Parlour</title>  
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="home">
+        <div class="banner">
+            <h1>Welcome to ALS Beauty Parlour</h1>
+            <p>Discover the beauty in you</p>
+        </div>
+        </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1 style="font-size: xx-large; color:  #9b1e63bd; text-align: center;">ABOUT US</h1>
+        <br>
+        <p style="font-size: large;text-align: center;color: #330d22bd;">
+            Welcome to My Beauty Parlour, where beauty is not just a service, but it is personalized experience tailored just for you. We<br>
+            understand the importance of feeling and confident and beautiful that's why we're dedicated to making your beauty journey<br>
+            Effortless, and a Enjoyable, and Rewarding. we're more than just an online platform for finding beauty services and we're a<br>
+            community of beauty enthusiast, professionals, and trendsetters. Our sole aim is empower our individuals to embrace their<br>
+            unique beauty, offering a diverse range of service to cater to every style, occasion, and preference.Our goal is to create the <br>
+            largest community of the beauticians, celebrities, and local suppliers at a national level in India. we and see each member <br>
+            of our community as an integral part of the MyBeautyParlour.com teamAt Beauty Parlour, we believe in a enhancing your<br>
+            natural beauty with our range of professional beauty services . Our team of experts is very dedication to do thebest work.</p>
+        </section>
+        <h1 style="font-size: xx-large; color:  #9b1e63bd; text-align: center;">TESTIMONIAL</h1>
+    <!-- Custom styles -->
+     <br>
+    <style>
+        .testimonial {
+            padding: 0px;
+            margin-bottom: 10px;
+            background-color:#ebcfd3 ;
+            border: 1px solid #ebcfd3;
+            border-radius: 7px;
+            text-align: center;
+        }
+
+        .testimonial .testimonial-text {
+            font-style: inherit;
+            font-size: larger;
+            color: #330d22bd;
+        }
+        .testimonial .testimonial-author {
+            border-radius: 50%;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial">
+                                <p class="testimonial-text">"I loved ur style of makeup. U wer professional, responsive, made great suggestions<br> and was sooo easy to deal with"</p>
+                                <p class="testimonial-author">- Noone</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <p class="testimonial-text">" Wonderful beauty services are provided... nice n courteous staff... keep up the good work" 
+                                    "</p>
+                                <p class="testimonial-author">- Amit chaurasiya</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <p class="testimonial-text"> "The salon's friendly and welcoming atmosphere made me feel comfortable throughout the entire visit"</p>
+                                <p class="testimonial-author">- Abhi prajapati</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies (jQuery is required) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <br>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1 style="font-size: xx-large; color:  #9b1e63bd; text-align: center;">CONTACT US</h1>
+        <br>
+        <form>
+            <div class="form">
+            
+                <form id="contact-form">
+                   <label for="name">Name:</label>
+                   <input type="text" id="name" name="user_name" required><br>
+            
+                   <label for="email">Email:</label>
+                   <input type="email" id="email" name="user_email" required><br>
+            
+                   <label for="mobile no">Mobile no:</label>
+                   <input type="mobile no" id="mobile no" name="mobile_no" required><br>
+            
+                   <label for="message">feedback:</label>
+                   <textarea id="message" name="message" rows="4" required></textarea><br>
+            
+                   <button type="submit">Submit</button>
+               </form>
+            <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+                           <script>
+                               (function () {
+                                   emailjs.init('BG3boyfq45mCSFw_t'); // Replace with your EmailJS User ID
+                               })();
+            
+                                document.getElementById('contact-form').addEventListener('submit', function (event) {
+                                   event.preventDefault();
+            
+                                   emailjs.sendForm('service_tegbtzn','template_otctjkn', this)
+                                       .then(function (response) {
+                                           alert('Email sent successfully!');
+                                           document.getElementById('contact-form').reset(); // Optional: reset form fields
+                                       }, function (error) {
+                                           alert('Failed to send email. Error: ' + JSON.stringify(error));
+                                       });
+                               });
+                           </script>
+            
+                </div>
+    </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <footer>
+      <p>&copy; 2024 ALS Beauty Parlour | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

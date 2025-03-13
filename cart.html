@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div id="cart"></div>
+   <button onclick="loadCart()" id="button">GET CART DETAILS</button>
+    <script>
+        function loadCart() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "cart.xml", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    displayCart(xhr);
+                }
+            };
+            xhr.send();
+        }
+
+        function displayCart(xml) {
+            const cartDiv = document.getElementById("cart");
+            const items = xml.responseXML.getElementsByTagName("item");
+
+            for (let i = 0; i < items.length; i++) {
+                const name = items[i].getElementsByTagName("name")[0].textContent;
+                const price = items[i].getElementsByTagName("price")[0].textContent;
+                const quantity = items[i].getElementsByTagName("quantity")[0].textContent;
+                const image = items[i].getElementsByTagName("image")[0].textContent;
+
+                const itemDiv = document.createElement("div");
+                itemDiv.classList.add("cart-item");
+
+                itemDiv.innerHTML = `
+                    <img src="${image}" alt="${name}">
+                    <div>
+                        <h2>${name}</h2>
+                        <p>Price: $${price}</p>
+                        <p>Quantity: ${quantity}</p>
+                    </div>
+                `;
+
+                cartDiv.appendChild(itemDiv);
+            }
+        }
+        // window.onload = loadCart; 
+    </script>
+</body>
+</html>

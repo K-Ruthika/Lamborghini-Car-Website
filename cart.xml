@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cart>
+    <item>
+        <name>Item 1</name>
+        <price>29.99</price>
+        <quantity>2</quantity>
+        <image>image.png</image>
+    </item>
+    <item>
+        <name>Item 2</name>
+        <price>49.99</price>
+        <quantity>1</quantity>
+        <image>image1.jpg</image>
+    </item>
+    <item>
+        <name>Item 3</name>
+        <price>19.99</price>
+        <quantity>3</quantity>
+        <image>image3.jpg</image>
+    </item>
+</cart>

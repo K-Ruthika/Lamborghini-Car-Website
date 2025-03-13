@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task</title>
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px 0; /* Adjust margin to stack vertically */
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #333;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mouse over event
+            $("#mouseoverBtn").mouseover(function() {
+                alert("Mouse is over me!");
+            });
+
+            // Single click event
+            $("#clickBtn").click(function() {
+                alert("Button clicked once!");
+            });
+
+            // Double click event
+            $("#dblclickBtn").dblclick(function() {
+                alert("Button double-clicked!");
+            });
+
+            // Hover to hide event
+            $("#hoverHideBtn").hover(
+                function() {
+                    $(this).css("opacity", "0");
+                },
+                function() {
+                    $(this).css("opacity", "1");
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+
+    <div class="button-container">
+        <button id="mouseoverBtn" class="button">Mouse Over Me</button>
+        <button id="clickBtn" class="button">Single Click Me</button>
+        <button id="dblclickBtn" class="button">Double Click Me</button>
+        <button id="hoverHideBtn" class="button">Hover to Hide</button>
+    </div>
+
+</body>
+</html>

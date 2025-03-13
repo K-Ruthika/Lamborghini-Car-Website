@@ -1,0 +1,251 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+header {
+    background-color:black;
+    color: rgb(161, 159, 159);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+   
+}
+
+.logo img {
+    max-width: 40px;
+    
+    
+}
+nav h1 {
+    margin: 0 ;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:rgb(161, 159, 159);
+    font-weight: bold;
+    transition: color 0.3s;
+
+}
+
+nav ul li a:hover {
+    color:rgba(255, 255, 255, 0.815);
+}
+
+.banner {
+    background-image: url('https://wallpapercat.com/w/full/3/d/b/159665-3840x2160-desktop-4k-lamborghini-wallpaper-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color:  black;
+    text-align: center;
+    padding: 300px 0; /* Adjust the padding as needed */
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   /* Black overlay with 50% opacity */
+}
+.section {
+    padding: 1em;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 1em;
+}
+
+.home {
+    background-color: black;
+    padding: 1em;
+}
+
+.home h1 {
+    font-size: 2.5em;
+    color: black;
+}
+
+.home p {
+    font-size: 1.2em;
+    color:black;
+}
+#cart {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    color: #e0a80d; /* Matches Lamborghini theme */
+    font-size: larger;
+    text-align: left;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid  rgb(161, 159, 159);;
+}
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+.cart-item h2 {
+    color: #e0a80d;
+    margin: 0;
+    font-size: 18px;
+}
+.cart-item p {
+    margin: 4px 0;
+    color: #aaa;
+}
+#button {
+    background-color: #e0a80d;
+    color: #111;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+#button:hover {
+    background-color: #ffd700;
+}
+
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .map, .form {
+      flex: 1;
+      margin: 0 1em;
+  }
+  
+  form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      max-height: 600px;
+      text-align: left;
+    
+  }
+  
+  form label {
+      margin-top: 0em;
+      
+  }
+  
+  form input, form textarea {
+      padding: 0em;
+      margin-top: 0.5em;  
+      font-size: 1em;
+      border: 1px solid black;
+      border-radius: 5px;
+  }
+  form button {
+      margin-top: 1em;
+      padding: 0.75em;
+      background-color:rgba(148, 160, 160, 0.712);
+      color:black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      
+  }
+  .footer {
+      background: url('https://static.vecteezy.com/system/resources/thumbnails/050/532/298/small_2x/sleek-black-sports-car-in-minimalistic-studio-setting-with-abstract-background-photo.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.9;
+      color: rgb(51, 50, 50);
+      padding: 20px 0;
+  }
+  
+  .footer-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+  }
+  
+  .footer-section {
+      flex: 1;
+      margin: 0 15px;
+  }
+  
+  .footer-section h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+  }
+  
+  .footer-section ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .footer-section ul li {
+      margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+      color:rgba(0, 0, 0, 0.719);
+      text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+      text-decoration:double;
+  }
+  footer .social-media {
+      margin-bottom: 20px;
+      text-align: center;
+  }
+  
+  footer .social-media a {
+      color:black;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.5em;
+  }
+  .footer-section p {
+      margin: 5px 0;
+  }
+  .footer-bottom {
+      background-color:rgba(148, 160, 160, 0.712); /* Different background for copyright section */
+      color:black;
+      padding: 10px 0;
+  }
+  
+  .footer-bottom p {
+      margin: 0;
+      font-size: 18px;
+  }
+  
+  
+  
+  

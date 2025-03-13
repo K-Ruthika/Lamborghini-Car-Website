@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to See More (within box)</title>
+    <style>
+        /* Basic styling for the box */
+        .see-more-box {
+            width: 300px;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+        }
+        /* Initial text and hidden content styling */
+        .content {
+            display: none; /* Hidden initially */
+            margin-top: 10px;
+        }
+        /* Change cursor and color on hover for visual feedback */
+        .see-more-box:hover {
+            background-color: #f0f8ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="see-more-box" onclick="toggleContent()">
+        <p>Learn to drive with experienced instructors. <span id="dots">...</span></p>
+
+        <!-- Hidden content -->
+        <div id="more" class="content">
+            <p>We offer flexible schedules, affordable pricing, and provide a supportive learning environment. Start today and gain the skills and confidence needed to drive safely!</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            var moreContent = document.getElementById("more");
+            var dots = document.getElementById("dots");
+
+            if (moreContent.style.display === "none") {
+                moreContent.style.display = "block"; // Show content
+                dots.style.display = "none"; // Hide dots
+            } else {
+                moreContent.style.display = "none"; // Hide content
+                dots.style.display = "inline"; // Show dots
+            }
+        }
+    </script>
+
+</body>
+</html>
+
